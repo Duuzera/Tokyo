@@ -1,0 +1,27 @@
+.recepcao {
+  padding-top: 30px;
+  font-size: 30px;
+}
+
+.informacoes_basicas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #181C24;
+  height: 80px;
+  margin-right: auto;
+  border: 1px solid transparent;
+  -o-border-image: linear-gradient(to right top, #bd31c4, #8e3bb0, #643b97, #413579, #282c59);
+     border-image: linear-gradient(to right top, #bd31c4, #8e3bb0, #643b97, #413579, #282c59);
+  border-image-slice: 1;
+  margin-left: 1%;
+}
+
+.icone {
+  color: rgb(43, 20, 126);
+  width: 30px;
+}
+
+.row {
+  font-size: small;
+}/*# sourceMappingURL=index.css.map */

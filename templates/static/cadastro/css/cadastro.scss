@@ -1,0 +1,131 @@
+@keyframes animacao{
+
+    0% {opacity: 0;}
+    100% {opacity: 100%;}
+}
+@keyframes animacao2{
+
+    0% {width: 50%; transform: translate(33%, 0%); opacity: 30%;}
+    100% {width: 100%; opacity: 100%;}
+}
+
+@keyframes animacao3{
+  0% {opacity: 0;}
+  15%{opacity: 100%;}
+  25% {opacity: 50%;}
+  30% {opacity: 100%;}
+  45% {opacity: 0%;}
+  50% {opacity: 100%;}
+  62% {opacity: 0%;}
+  70% {opacity: 70;}
+  75% {opacity: 80%;}
+  80% {opacity: 90%;}
+  80% {opacity: 100%;}
+  100% {opacity: 100%;}
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: rgb(0, 0, 0);
+  
+ 
+}
+
+
+.linha {
+  width: 100%;
+  -webkit-animation-name: animacao2;
+          animation-name: animacao2;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  background-color: blueviolet;
+}
+
+body {
+  background: rgb(0, 0, 0);
+}
+
+.box-model {
+
+  width: 700px;
+  height: 350px;
+  border: 2px solid blueviolet;
+  margin: 164px;
+  border-style: groove;
+  border-radius: 15px;
+  box-shadow: 1px 3px 80px blueviolet ;
+  -webkit-animation-name: animacao;
+          animation-name: animacao;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+          
+}
+
+.form-inicio {
+  margin-top: 10px;
+ 
+  text-align: center;
+  background-color: white;
+  font-weight: 700;
+  color: black;
+}
+
+h5 {
+  color: blueviolet;
+  padding: 20px;
+  text-shadow: blueviolet 0 0 10px;
+  
+}
+
+h1 {
+    color: blueviolet;
+    font-style: oblique;
+    text-shadow: blueviolet 5px 50px 10px;
+    animation: animacao3;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+  color: aqua;
+  margin: 12px 2px;
+  padding: 3px 3px;
+  overflow: hidden;
+  border: 2px solid rgb(43, 20, 126);
+  position: relative;
+  width: 130px;
+  box-shadow: 1px 1px 10px blueviolet ;
+}
+.btn:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgb(10, 0, 46);
+  z-index: -1;
+  transition: 0.7s ease;
+}
+
+.btn1:before {
+  width: 150%;
+  height: 0%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.btn1:hover {
+  color: rgb(104, 83, 180);
+}
+.btn1:hover:before {
+  height: 550%;
+}/*# sourceMappingURL=login.css.map */

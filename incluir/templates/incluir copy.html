@@ -1,0 +1,129 @@
+{% extends 'base-principal.html' %}
+
+{% block 'title' %} Incluir {% endblock %}
+
+{% load static %}
+
+{% block 'head' %} 
+
+<link rel="stylesheet" href="{% static 'incluir/css/incluir.css'%}">
+
+{% endblock %}
+
+
+
+{% block 'dashboard' %}    
+
+
+<div class="container">
+    
+    <div class="row">        
+        <a onclick="exibir_form('1')" class="btn btn1"> ADICIONAR ENTRADAS </a>
+            
+        
+        <a onclick="exibir_form('2')" class="btn btn1"> Adicionar Gastos </a>
+           
+            
+    </div>
+
+        <div id="adicionar-entradas" class="container">
+            <br>
+           <h1>Adicionar Gastos </h1> 
+            <br><br>
+            
+            <form action="#" method="POST">{% csrf_token %}
+                
+                <div class="form-group row">
+                    <label for="" class="col-sm-2 col-form-label"> Nome: </label>
+                    <div class="form-group col-md-4"> 
+                        <input type="text" class="form-control" placeholder="nome" name="nome">
+                    </div>
+                </div>
+                <br>                     
+                <div class="form-group row">
+                    <label for="" class="col-sm-2 col-form-label"> Data: </label>
+                    <div class="form-group col-md-4">                    
+                        <input type="text" class="form-control" placeholder="DD/MM/AAAA" name="data">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                    <label for="" class="col-sm-2 col-form-label"> Valor: </label>
+                    <div class="form-group col-md-4">
+                        <input type="text" class="form-control" placeholder="R$ $$,$$$" name="valor">
+                    </div>
+                </div>
+
+                <div class="form row">
+                    
+                    <label for="" class="col-sm-2 col-form-label"> Categoria:</label>
+                    <div class="form-group col-md-4">                                          
+                        <select class="form-control" name="selecionar-categoria">
+                           
+                            <option value=""></option>
+                           
+                        </select>
+                        <br>                                             
+                        <input type="text" placeholder="categoria" class="col-sm-2 col-form-label" name="cat">
+                        <input onclick="add_cat_ent()" class="btn btn2" value="salvar">
+                </div>
+
+                <br> 
+                <hr style="background-color:gray;">
+                <input type="submit" value="Incluir" class="btn btn2">   
+                
+            </form>
+            </div>
+        
+        </div>    
+        <div id="adicionar-gastos" class="container">
+            <br>
+           <h1>Adicionar Gastos </h1> 
+            <br><br>
+            <form action="#" method="POST">{% csrf_token %}
+                <div class="form-group row">
+                    <label for="" class="col-sm-2 col-form-label"> Nome: </label>
+                    <div class="form-group col-md-4"> 
+                        <input type="text" class="form-control" placeholder="nome" name="nome">
+                    </div>
+                </div>
+                <br>                     
+                <div class="form-group row">
+                    <label for="" class="col-sm-2 col-form-label"> Data: </label>
+                    <div class="form-group col-md-4">                    
+                        <input type="text" class="form-control" placeholder="DD/MM/AAAA" name="data">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                    <label for="" class="col-sm-2 col-form-label"> Valor: </label>
+                    <div class="form-group col-md-4">
+                        <input type="text" class="form-control" placeholder="R$ $$,$$$" name="valor">
+                    </div>
+                </div>
+
+                <div class="form row">
+                    <label for="" class="col-sm-2 col-form-label"> Categoria:</label>
+                    <div class="form-group col-md-4">                      
+                        <select class="form-control" name="selecionar-categoria">
+                            <option data-default disabled selected required>
+                        </select>
+                        <br>                                      
+                        <input type="text" placeholder="categoria" class="col-sm-2 col-form-label" name="cat2">
+                        <input onclick="add_categorio_entrada()" class="btn btn2" value="salvar" >
+                </div>
+                <br> 
+                <hr style="background-color:gray;">
+                <input type="submit" value="Incluir" class="btn btn2">   
+            </form>
+            </div>
+            
+        
+        </div>    
+        
+</div>
+
+
+
+<script src="{% static 'incluir/js/incluir.js' %}"></script>
+{% endblock  %}

@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block 'titulo' %} Cadastro {% endblock %}
+
+{% load static %}
+
+{% block 'conteudo' %}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'cadastro/css/cadastro.css' %}">
+
+
+
+<body>
+    <center>
+
+    {% if status == '0'%}
+            <div class="alert alert-success" role="alert">
+                Cadastro realizado com sucesso
+            </div>
+            {% endif %}
+        
+            {% if status == '1' %}
+            <div class="alert alert-danger" role="alert">
+                Nome e email não podem estar vazios.
+            </div>
+            {% endif %}
+        
+            {% if status == '2' %}
+            <div class="alert alert-danger" role="alert">
+                Sua senha deve ter pelo menos 8 caracteres
+            </div>
+            {% endif %}
+        
+            {% if status == '3' %}
+            <div class="alert alert-danger" role="alert">
+                Usuário ou E-mail ja existe no sistema
+            </div>
+            {% endif %}
+        
+            {% if status == '4' %}
+            <div class="alert alert-danger" role="alert">
+                Erro interno do sistema
+            </div>
+            {% endif %}
+
+
+
+<section class="home-section">
+
+    <br><br><br>
+    <h1>TOKYO</h1>
+
+</section>
+
+        <div class="box-model">
+            
+            <form method="POST" action="{% url 'valida_cadastro' %}"> {% csrf_token %}
+                <H5>CADASTRO</H1>
+                <ul>
+                    <br>
+                    <div class="form-row">
+                        <div class="col-md" >
+                            
+                            <input type="text" class="form-inicio" placeholder="Nome" value="" name= "nome" required>
+
+                        </div>
+                        <div class="col-md">
+                           
+                            <input type="text" class="form-inicio" placeholder="Sobrenome" name="sobrenome" value="" required>
+
+                        </div>  
+                    </div>          
+                </ul>
+                <ul>
+                    <div class="form-row">
+                        <div class="col-md">
+                           
+                            
+                            <input type="text" class="form-inicio" placeholder="(11)9 9999-9999" name="whatsapp" required>
+                        </div>
+                        <div class="col-md">
+                            
+                            <input type="text" class="form-inicio" placeholder="E-mail" name="email" required>     
+                        </div>
+                    </div>
+                </ul>
+                <ul>
+                    <div class="form-row">
+                        <div class="col-md">
+                            
+                            <input type="text" class="form-inicio" placeholder="Usuario" name="user" required>
+                            <div >
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            
+                            <input type="password" class="form-inicio" placeholder="Senha" name="senha" required>
+                            <div >
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+            
+                <ul>
+                    <div>
+                        <div>
+                        <input type="submit" class="btn btn1" value="CADASTRAR">
+                        <a class="btn btn1" href="{% url 'login' %}">Login</a>
+                        </div>
+                    </div>
+                </ul>
+            </form>
+        </div>
+
+    </center>
+    <hr class="linha">
+</body>
+
+
+{% endblock  %}

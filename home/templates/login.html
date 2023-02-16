@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block 'titulo' %} Login {% endblock %}
+
+{% load static %}
+
+{% block 'conteudo' %}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'login/css/login.css' %}">
+</head>
+<body>
+    <center>
+    {% if status == '1'%}
+    <div class="alert alert-success" role="alert">
+        Usuário ou senha invalido
+    </div>
+    {% endif %}
+
+    {% if status == '0' %}
+    <div class="alert alert-danger" role="alert">
+        Faça login antes de tentar acessar o sistema
+    </div>
+    {% endif %}
+
+        <br><br>
+        <h1>TOKYO</h1>
+
+
+
+
+
+    <div class="box-model">
+        <form method="POST" action="{% url 'validar_login' %}">
+            {% csrf_token %}
+            <H5>LOGIN</H1>
+            <div>
+                <br>
+                <div>
+                <input type="text" placeholder="Usuario" name="user" class="form-inicio">
+                </div>
+            </div>
+            <div>
+                <br>
+                <div>
+                <input type="password" placeholder="Senha" name="senha" class="form-inicio">
+                </div>
+            </div>
+            <br>
+            <input type="submit" value="LOGAR" class="btn btn1">
+            <a class="btn btn1" href="{% url 'cadastro' %}">Cadastrar</a>
+            
+        </form>
+
+
+        <div>
+
+            
+        </div>
+
+        
+    </div>
+
+</center>
+    <hr class="linha">
+
+</body>
+{% endblock  %}
+</html>

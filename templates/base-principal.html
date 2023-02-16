@@ -1,0 +1,86 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'general/css/base-principal.css' %}">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    {% block 'head' %}{% endblock %}
+
+    <title>{% block 'title' %}{% endblock %}</title>
+  </head>
+  <body>
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name">Tokyo</div>
+            <i class='bx bx-menu' id="btn" ></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <a href="{% url 'index' %}">
+              <i class='bx bx-grid-alt'></i>
+              <span class="links_name">Página inicial</span>
+            </a>
+            <span class="tooltip">Página inicial</span>
+          </li>
+          <li>
+          <a href="{% url 'perfil' %}">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Perfil</span>
+          </a>
+          <span class="tooltip">Perfil</span>
+        </li>
+        <li>
+          <a href={% url 'incluir' %}>
+            <i class='bx bx-calendar' ></i>
+            <span class="links_name">Incluir</span>
+          </a>
+          <span class="tooltip">Incluir</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-book' ></i>
+            <span class="links_name">Limites</span>
+          </a>
+          <span class="tooltip">Limites</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Relatórios</span>
+          </a>
+          <span class="tooltip">Relatórios</span>
+        </li>
+          <div class="footer">  
+          <li>
+            
+            <a href="{% url 'sair' %}">
+              <i class='bx bx-log-out' ></i>
+              <span class="links_name">Sair</span>
+            </a>
+            <span class="tooltip">Sair</span>
+            
+          </li>
+        </div>
+        </ul>
+      </div>
+
+      <section class="home-section">
+          {% block 'dashboard' %}
+          {% endblock %}
+
+      </section>
+
+
+    {% block 'body' %}
+    {% endblock %}
+    <script src="{% static 'general/js/base-principal.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
