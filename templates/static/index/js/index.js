@@ -86,7 +86,7 @@ function renderiza_faturamento_mensal(url){
             data: {
                 labels: data.labels,
                 datasets: [{
-                    label: "Faturamento",
+                    label: "Renda",
                     data: data.data,
                     backgroundColor: cores_faturamento_mensal[0],
                     borderColor: cores_faturamento_mensal[1],

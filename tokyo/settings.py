@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'incluir',
     'perfil',
     'crispy_forms',
+    'historico',
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

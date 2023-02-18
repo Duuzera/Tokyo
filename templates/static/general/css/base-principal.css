@@ -227,7 +227,7 @@
   position: relative;
   min-height: 100vh;
   top: 0;
-  background: #000000;
+  background: #040008;
   left: 60px;
   width: calc(100% - 60px);
   transition: all 0.5s ease;
@@ -239,7 +239,7 @@
 }
 .home-section .text{
   display: inline-block;
-  color: var(--main-color);
+  color: aqua;
   font-size: 25px;
   font-weight: 500;
   margin: 18px;

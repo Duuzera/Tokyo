@@ -2,7 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('incluir/', views.incluir, name= 'incluir'),
+    path('renda/', views.renda, name= 'renda'),
+    path('gasto/', views.gasto, name= 'gasto'),
     path('sair/', views.sair, name= 'sair'),
     path('add_cat/', views.add_cat, name= 'add_cat'),
     path('add_ent/', views.add_ent, name= 'add_ent'),

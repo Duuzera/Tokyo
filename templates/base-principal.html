@@ -36,18 +36,25 @@
           <span class="tooltip">Perfil</span>
         </li>
         <li>
-          <a href={% url 'incluir' %}>
+          <a href={% url 'renda' %}>
             <i class='bx bx-calendar' ></i>
-            <span class="links_name">Incluir</span>
+            <span class="links_name">Renda</span>
           </a>
-          <span class="tooltip">Incluir</span>
+          <span class="tooltip">Renda</span>
         </li>
         <li>
-          <a href="#">
-            <i class='bx bx-book' ></i>
-            <span class="links_name">Limites</span>
+          <a href={% url 'gasto' %}>
+            <i class='bx bx-calendar' ></i>
+            <span class="links_name">Gasto</span>
           </a>
-          <span class="tooltip">Limites</span>
+          <span class="tooltip">Gasto</span>
+        </li>
+        <li>
+          <a href="{% url 'historico' %}">
+            <i class='bx bx-book' ></i>
+            <span class="links_name">Histórico</span>
+          </a>
+          <span class="tooltip">Histórico</span>
         </li>
         <li>
           <a href="#">

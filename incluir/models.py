@@ -23,6 +23,9 @@ class Entrada(models.Model):
     user = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     categoria = models.ForeignKey(CategoriaEntrada, on_delete=models.DO_NOTHING)
 
+    class Meta:
+        ordering = ["data"]
+
     def __str__(self) -> str:
         return self.nome    
 
@@ -32,6 +35,9 @@ class Gasto(models.Model):
     valor = models.FloatField()
     user = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     categoria = models.ForeignKey(CategoriaGasto, on_delete=models.DO_NOTHING)
+
+    class Meta:
+        ordering = ["data"]
 
     def __str__(self) -> str:
         return self.nome           
